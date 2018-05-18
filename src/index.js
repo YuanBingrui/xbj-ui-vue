@@ -1,15 +1,22 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
+import TopMenu from './components/TopMenu/index'
 
-Vue.config.productionTip = false
+const components = [
+  TopMenu
+]
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-})
+const install = function (Vue, opts = {}) {
+  components.map(component => {
+    Vue.component(component.name, component)
+  })
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
+module.exports = {
+  install,
+  'top-menu': TopMenu
+}
+
+module.exports.default = module.exports

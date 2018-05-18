@@ -1,0 +1,12 @@
+[
+  {
+    "name": "app",
+    "children": [
+      {
+        "path": "topmenu",
+        "dirPath": "TopMenu/TopMenu",
+        "title": "顶部菜单"
+      }
+    ]
+  }
+]

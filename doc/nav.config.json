@@ -1,0 +1,20 @@
+[
+  {
+    "name": "开发指南",
+    "children": [
+      {
+        "path": "quickstart",
+        "title": "快速上手"
+      }
+    ]
+  },
+  {
+    "name": "组件",
+    "children": [
+      {
+        "path": "topmenu",
+        "title": "顶部菜单"
+      }
+    ]
+  }
+]

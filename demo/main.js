@@ -2,9 +2,18 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import xbjUI from '../src/index.js'
+import VueRouter from 'vue-router'
+import routes from './route.config'
 
 Vue.config.productionTip = false
+
+Vue.use(xbjUI)
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes: routes
+})
 
 /* eslint-disable no-new */
 new Vue({
