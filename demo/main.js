@@ -2,17 +2,25 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import xbjUI from '../src/index.js'
+import { TopMenu } from '../src/index'
 import VueRouter from 'vue-router'
 import routes from './route.config'
 
 Vue.config.productionTip = false
 
-Vue.use(xbjUI)
+Vue.use(TopMenu)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  routes: routes
+  mode: 'history',
+  routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
 })
 
 /* eslint-disable no-new */

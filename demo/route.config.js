@@ -1,4 +1,4 @@
-import navConfig from './nav.config.json'
+import navConfig from './nav.config'
 
 const addRouter = function (dirPath) {
   return () => import(`./components/${dirPath}.vue`)
@@ -6,19 +6,17 @@ const addRouter = function (dirPath) {
 
 const routes = function () {
   let route = []
-  let childRoute = []
   navConfig.forEach((nav) => {
     nav.children.forEach((item) => {
-      childRoute.push({
+      route.push({
         path: '/' + item.path,
+        name: item.path,
+        meta: {
+          title: item.title
+        },
         component: addRouter(item.dirPath)
       })
     })
-  })
-  route.push({
-    path: '/',
-    component: () => import('./App'),
-    children: childRoute
   })
   return route
 }

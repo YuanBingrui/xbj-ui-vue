@@ -14,9 +14,11 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-module.exports = {
-  install,
-  'top-menu': TopMenu
+export {
+  TopMenu
 }
 
-module.exports.default = module.exports
+export default {
+  install,
+  TopMenu
+}

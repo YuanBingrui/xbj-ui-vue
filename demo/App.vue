@@ -1,12 +1,25 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-link
+      v-for="(routersItem, index) in routersList"
+      :key="index"
+      :to="{name: routersItem.path}">
+      {{ routersItem.title }}
+    </router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import navConfig from './nav.config'
+
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      routersList: navConfig[0].children
+    }
+  }
 }
 </script>
 
@@ -17,6 +30,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

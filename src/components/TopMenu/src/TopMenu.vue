@@ -8,6 +8,7 @@
         <li
           ref="menuItem"
           v-for="(menuItem, index) in menuList"
+          :key="index"
           @click="currentMenu(index)"
           @mouseenter="mouseHover(index)"
           @mouseleave="mouseLeave">
