@@ -6,6 +6,11 @@
         "path": "topmenu",
         "dirPath": "TopMenu/TopMenu",
         "title": "顶部菜单"
+      },
+      {
+        "path": "picturezoom",
+        "dirPath": "PictureZoom/PictureZoom",
+        "title": "图片zoom"
       }
     ]
   }

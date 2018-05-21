@@ -18,6 +18,10 @@ const routes = function () {
       })
     })
   })
+  route.push({
+    path: '/',
+    redirect: '/topmenu'
+  })
   return route
 }
 

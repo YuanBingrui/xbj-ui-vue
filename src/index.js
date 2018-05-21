@@ -1,7 +1,9 @@
 import TopMenu from './components/TopMenu/index'
+import PictureZoom from './components/PictureZoom/index'
 
 const components = [
-  TopMenu
+  TopMenu,
+  PictureZoom
 ]
 
 const install = function (Vue, opts = {}) {
@@ -15,10 +17,12 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export {
-  TopMenu
+  TopMenu,
+  PictureZoom
 }
 
 export default {
   install,
-  TopMenu
+  TopMenu,
+  PictureZoom
 }

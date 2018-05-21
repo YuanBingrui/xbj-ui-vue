@@ -2,13 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import { TopMenu } from '../src/index'
+import xbjui from '../src/index'
 import VueRouter from 'vue-router'
 import routes from './route.config'
 
 Vue.config.productionTip = false
 
-Vue.use(TopMenu)
+Vue.use(xbjui)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
