@@ -3,14 +3,25 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import { TopMenu } from '../src/index'
 import routes from './route.config'
+import 'highlight.js/styles/github.css'
 
 Vue.config.productionTip = false
 
+Vue.use(TopMenu)
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-  routes: routes
+  mode: 'history',
+  routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title
+  }
+  next()
 })
 
 /* eslint-disable no-new */

@@ -1,5 +1,5 @@
 'use strict'
-require('./check-versions')()
+require('../check-versions')()
 
 process.env.NODE_ENV = 'production'
 
@@ -14,7 +14,7 @@ const webpackConfig = require('./webpack.prod.doc.conf.js')
 const spinner = ora('building doc website for production...')
 spinner.start()
 
-rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
+rm(path.join(path.resolve(__dirname, '../../doc/xbjui'), config.build.assetsSubDirectory), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {
     spinner.stop()

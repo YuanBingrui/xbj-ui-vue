@@ -3,17 +3,14 @@
     "name": "开发指南",
     "children": [
       {
-        "path": "quickstart",
-        "title": "快速上手"
-      }
-    ]
-  },
-  {
-    "name": "组件",
-    "children": [
-      {
         "path": "topmenu",
+        "dirPath": "TopMenu/TopMenu",
         "title": "顶部菜单"
+      },
+      {
+        "path": "picturezoom",
+        "dirPath": "PictureZoom/PictureZoom",
+        "title": "图片zoom"
       }
     ]
   }

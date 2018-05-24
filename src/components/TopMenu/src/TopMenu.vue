@@ -12,7 +12,9 @@
           @click="currentMenu(index)"
           @mouseenter="mouseHover(index)"
           @mouseleave="mouseLeave">
-          <a :href="menuItem.href">{{ menuItem.name }}</a>
+          <router-link :to="menuItem.path">
+            {{ menuItem.name }}
+          </router-link>
         </li>
       </ul>
       <span ref="slideBox"></span>
@@ -79,50 +81,42 @@ export default {
 }
 </script>
 
-<style scoped>
-#menu-box {
-  --primary-color: '';
-  --slide-speed: '';
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px var(--primary-color) solid;
-  position: sticky;
-  padding: 2px 0 10px 0;
-}
-.logo-box {
-  margin-left: 50px;
-  display: flex;
-  align-items: center;
-}
-.logo-box img {
-  width: 50px;
-  height: 50px;
-}
-.menu-body {
-  position: relative;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  transition: width 2s ease 1s;
-}
-a {
-  text-decoration: none;
-  color: var(--primary-color);
-  padding: 20px 10px;
-  text-align: center;
-  margin: 0 10px;
-}
-span {
-  height: 5px;
-  background-color: var(--primary-color);
-  border-radius: 2.5px;
-  position: absolute;
-  transition:left var(--slide-speed);
-}
+<style lang="stylus" scoped>
+#menu-box
+  --primary-color ''
+  --slide-speed ''
+  width 100%
+  display flex
+  justify-content space-between
+  align-items center
+  border-bottom 1px var(--primary-color) solid
+  position sticky
+  padding 2px 0 10px 0
+  .logo-box
+    margin-left 50px
+    display flex
+    align-items center
+    & img
+      width 50px
+      height 50px
+  .menu-body
+    position relative
+    ul
+      list-style-type none
+      padding 0
+      li
+        display inline-block
+        transition width 2s ease 1s
+        a
+          text-decoration none
+          color var(--primary-color)
+          padding 20px 10px
+          text-align center
+          margin 0 10px
+  span
+    height 5px
+    background-color var(--primary-color)
+    border-radius 2.5px
+    position absolute
+    transition left var(--slide-speed)
 </style>

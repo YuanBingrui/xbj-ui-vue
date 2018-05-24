@@ -11,6 +11,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+const hljs = require('highlight.js')
+
 const env = require('../../config/prod.env')
 
 baseWebpackConfig.entry = {
@@ -37,7 +39,7 @@ rules.push({
           console.log(e)
         }
       }
-      return ''
+      return
     }
   }
 })
@@ -89,13 +91,13 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: 'index.html',
       template: './doc/index.html',
       inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
+      // minify: {
+      //   removeComments: true,
+      //   collapseWhitespace: true,
+      //   removeAttributeQuotes: true
+      //   // more options:
+      //   // https://github.com/kangax/html-minifier#options-quick-reference
+      // },
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),

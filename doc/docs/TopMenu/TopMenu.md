@@ -1,3 +1,7 @@
+### TopMenu
+
+> This is a topmenu component of vuejs
+
 <template>
   <top-menu :menu-list="menuData.menuList" :logo-img="menuData.logoImg"/>
 </template>
@@ -19,5 +23,8 @@ export default {
 }
 </script>
 
-<style>
-</style>
+```
+<template>
+  <top-menu :menu-list="menuData.menuList" :logo-img="menuData.logoImg"/>
+</template>
+```

@@ -10,6 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 
+const hljs = require('highlight.js')
+
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -24,7 +26,17 @@ rules.push({
   loader: 'vue-markdown-loader',
   options: {
     preset: 'default',
-    break: true
+    break: true,
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return hljs.highlight(lang, str).value
+        } catch (e) {
+          console.log(e)
+        }
+      }
+      return
+    }
   }
 })
 
